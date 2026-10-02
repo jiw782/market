@@ -1,5 +1,5 @@
 import db from "#db/client";
-import db from "#db/client";
+
 import { createOrder } from "#db/queries/orders";
 import { createOrderProduct } from "#db/queries/ordersProducts";
 import { createProduct } from "#db/queries/products";

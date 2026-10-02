@@ -19,7 +19,7 @@ app.use((err, req, res, next) => {
   switch (err.code) {
     case "22P02":
       return res.status(400).send(err.message);
-    // Unique constraint violation
+
     case "23505":
 
     case "23503":

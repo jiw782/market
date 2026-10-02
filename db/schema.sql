@@ -1,8 +1,11 @@
-
+DROP TABLE IF EXISTS orders_products;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    usersname TEXT NOT NULL,
+    username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL
 );
 
@@ -23,7 +26,7 @@ CREATE TABLE products(
 CREATE TABLE orders_products(
     order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
     product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
-    quantity INTEGER NOT NULL
+    quantity INTEGER NOT NULL,
     PRIMARY KEY (order_id, product_id)
 );
 
